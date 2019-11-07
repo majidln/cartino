@@ -19,6 +19,11 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+
+    boards: {
+      collection: 'board',
+      via: 'owner'
     }
   },
   beforeCreate: function(values, proceed) {

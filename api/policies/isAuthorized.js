@@ -35,6 +35,13 @@ module.exports = function(req, res, next) {
       return res.status(401).send({ err: 'Invalid Token!' });
     }
     req.token = token; // This is the decrypted token or the payload you provided
-    next();
+    console.log('token is', token);
+    User.findOne({ id: token.id }).exec(function findOneCB(err, found) {
+      if (err) {
+        res.status(401).send({ err: 'Can not fetch user' });
+      }
+      req.user = found;
+      next();
+    });
   });
 };
