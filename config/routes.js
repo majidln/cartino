@@ -31,5 +31,8 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  'post /auth/login': 'AuthController.login'
+  'post /auth/login': 'AuthController.login',
+
+  // Board Url
+  'get /board': 'BoardController.index'
 };

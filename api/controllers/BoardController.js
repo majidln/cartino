@@ -6,6 +6,15 @@
  */
 
 module.exports = {
+  index: async function(req, res) {
+    try {
+      const user = req.user;
+      const boards = await Board.find({owner: user.id});
+      return res.status(200).send(boards);
+    } catch(error) {
+      return res.status(400);
+    }
+  },
   create: function(req, res) {
     console.log('req is', req.user);
     req.body.owner = req.user.id;
