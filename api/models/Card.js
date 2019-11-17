@@ -16,6 +16,10 @@ module.exports = {
       type: 'string'
     },
 
+    box: {
+      type: 'number',
+    },
+
     belong: {
       model: 'board'
     }
