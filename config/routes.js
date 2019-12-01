@@ -35,6 +35,7 @@ module.exports.routes = {
 
   // Board Url
   'get /board': 'BoardController.index',
+  'get /board/:id': 'BoardController.item',
 
   // get board lightner
   'get /lightner/:board': 'LightnerController.index'
