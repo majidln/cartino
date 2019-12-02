@@ -17,6 +17,10 @@ module.exports = {
       type: 'string'
     },
 
+    color: {
+      type: 'string'
+    },
+
     owner: {
       model: 'user'
     },
